@@ -2,9 +2,12 @@ FROM node:8.10
 
 WORKDIR /code
 
-ADD . .
+COPY package.json .
+COPY package-lock.json .
 
 RUN npm install
+
+COPY . .
 
 EXPOSE 3000
 
